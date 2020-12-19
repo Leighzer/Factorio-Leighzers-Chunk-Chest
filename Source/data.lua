@@ -41,10 +41,10 @@ data:extend({
     name = "chunk-steel-chest",
     icons = leighzermods.leighzerchunkchest.itemIcons,    
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.2, result = "chunk-steel-chest"},
+    minable = {mining_time = 1, result = "chunk-steel-chest"},
     max_health = 350 * 32,
     --corpse = "chunk-steel-chest-remnants", -- we are opting for no corpse since it is so big it would pollute the map plus remnant wasn't placing in same place as orig building
-    dying_explosion = "medium-explosion", -- "steel-chest-explosion",
+    dying_explosion = "nuke-explosion", -- "steel-chest-explosion",
     open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.43 },
     close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.43 },
     resistances =
@@ -88,7 +88,7 @@ data:extend({
             scale = 0.5 * 32,            
           }
         },
-        -- {
+        -- { -- not drawing shadow as that wasn't rendering quite right either
         --   filename = "__base__/graphics/entity/steel-chest/steel-chest-shadow.png",
         --   priority = "extra-high",
         --   width = 56,
@@ -152,9 +152,4 @@ data:extend({
   --     }
   --   }
   -- }  
-})
-
-table.insert(data.raw.technology["steel-processing"].effects,{
-  type = "unlock-recipe",
-  recipe = "chunk-steel-chest"
 })
